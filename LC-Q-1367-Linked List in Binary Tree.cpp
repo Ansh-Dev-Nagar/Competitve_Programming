@@ -27,7 +27,7 @@ Explanation: Nodes in blue form a subpath in the binary Tree.
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-// SOLUTION-1 (first approach i thought of)
+// SOLUTION-1 (First approach i thought of)
 class Solution {
 public:
     
