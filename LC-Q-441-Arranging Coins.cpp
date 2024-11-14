@@ -31,7 +31,6 @@ public:
      int arrangeCoins(int n) {
         int l=0,r=n,ans;
         
-
         while(l<=r)
         {
           long mid = l+(r-l)/2;
