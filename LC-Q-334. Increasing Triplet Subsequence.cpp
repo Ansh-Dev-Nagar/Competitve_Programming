@@ -23,3 +23,40 @@ Constraints:
  
 Follow up: Could you implement a solution that runs in O(n) time complexity and O(1) space complexity?
 */
+
+//SOLUTION-1- S(n) = O(N)  (not optimized)
+
+class Solution {
+public:
+    bool increasingTriplet(vector<int>& nums) {
+         int n=nums.size();
+         vector<int>mini(n,0);
+         vector<int>maxi(n,0);
+ 
+        if(n<3)
+        return false;
+
+         int minimum=nums[0];
+         int maximum=nums[n-1];
+
+         for(int i=0;i<n;i++)
+         {
+            minimum=min(minimum,nums[i]);
+            mini[i]=minimum;
+         }
+
+         for(int i=n-1;i>=0;i--)
+         {
+            maximum=max(maximum,nums[i]);
+            maxi[i]=maximum;
+         }
+
+         for(int i=1;i<n-1;i++)
+         {
+           if(nums[i]!=mini[i] && nums[i]!=maxi[i])
+           return true;
+         }
+
+         return false;
+    }
+};
