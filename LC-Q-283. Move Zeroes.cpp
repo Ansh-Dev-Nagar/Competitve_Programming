@@ -12,5 +12,30 @@ Output: [0]
 
 */
 
-//solution-
+//solution- two pointer
 
+class Solution {
+public:
+    void moveZeroes(vector<int>& nums) {
+        int n=nums.size();
+        int i=0,j=0;
+
+        while(j<n)
+        {
+            if(j<n && nums[j]!=0)
+            {
+                nums[i++]=nums[j++];
+            }
+            while(j<n && nums[j]==0)
+            {
+                j++;
+            }
+        }
+
+        while(i<n)
+        {
+            nums[i++]=0;
+        }
+
+    }
+};
